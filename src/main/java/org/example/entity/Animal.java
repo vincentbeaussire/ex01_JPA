@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDate;
 
 @Entity
 
@@ -24,12 +25,13 @@ public class Animal {
     private String name;
     private int age;
     private String dietBalance;
-    private String arrivalDate;
+    private LocalDate arrivalDate;
 
-    public Animal(String name, int age, String dietBalance, String arrivalDate) {
+    public Animal(int id, String name, int age, String dietBalance, String arrivalDate) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.dietBalance = dietBalance;
-        this.arrivalDate = arrivalDate;
+        this.arrivalDate = LocalDate.parse(arrivalDate);
     }
 }
